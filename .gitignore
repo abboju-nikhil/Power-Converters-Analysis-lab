@@ -1,0 +1,127 @@
+# ============================================================
+# MATLAB / Simulink
+# ============================================================
+
+# MATLAB autosave / backup files
+*.asv
+*.m~
+*.mlx~
+*.slx~
+*.mdl~
+*.autosave
+
+# MATLAB generated files
+*.mex*
+*.p
+*.mat~
+
+
+# ============================================================
+# Simulink generated / cache directories
+# ============================================================
+
+slprj/
+simulink_cache/
+SimulinkProjectCache/
+codegen/
+*_ert_rtw/
+*_grt_rtw/
+*_rtw/
+*.slxc
+
+
+# ============================================================
+# MATLAB generated reports / temporary files
+# ============================================================
+
+*.log
+*.bak
+*.tmp
+*.temp
+
+# MATLAB coverage
+coverage/
+code-coverage/
+
+
+# ============================================================
+# Generated figures and simulation data
+# ============================================================
+
+# Ignore generated experiment results by default
+# Keep the directory structure using .gitkeep files.
+
+src/**/results/figures/*
+src/**/results/data/*
+
+results/consolidated_results/*
+results/reports/*
+
+
+# ============================================================
+# Operating system files
+# ============================================================
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+
+# ============================================================
+# IDE / editor files
+# ============================================================
+
+.vscode/
+.idea/
+*.code-workspace
+
+
+# ============================================================
+# Python
+# ============================================================
+
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+env/
+
+
+# ============================================================
+# Build / distribution artifacts
+# ============================================================
+
+build/
+dist/
+*.zip
+
+
+# ============================================================
+# Secrets / local configuration
+# ============================================================
+
+.env
+.env.*
+!.env.example
+
+*.pem
+*.key
+*.secret
+
+
+# ============================================================
+# Local MATLAB project/user files
+# ============================================================
+
+# Keep the shared .prj file tracked.
+# Ignore local user-specific project state if generated.
+*.prj.user
