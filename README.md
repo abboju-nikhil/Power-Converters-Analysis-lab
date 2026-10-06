@@ -1,69 +1,193 @@
 # Power Converters Analysis Lab
 
-*A structured MATLAB and Simulink workspace for twelve power-converter laboratory experiments.*
+A professional MATLAB/Simulink-based power electronics laboratory covering controlled converters, angle-control techniques, PWM and space-vector modulation, and multilevel inverter topologies.
 
-Experiments are organized in separate folders, with shared tools, documentation, tests, and results at the repository level.
+The repository is structured for **reproducible simulation, quantitative analysis, validation, documentation, and version-controlled engineering development**.
 
-## Current status
+---
 
-**This repository is a scaffold, not a runnable lab yet.** The folders show where future work belongs; they do not mean that simulations have been implemented.
+## Objectives
 
-- The MATLAB scripts, Simulink model files, and MATLAB project file are empty placeholders.
-- No experiment currently has working parameters, simulation logic, or analysis.
-- The lab manual PDF is not included. When available, place it at `docs/lab_manual/Power_Converters_Analysis_Lab.pdf`.
-- There is no run command until the scripts and models are implemented.
+This project aims to:
+
+- Develop and simulate power-electronic converter topologies.
+- Study the operating principles and characteristics of power semiconductor devices.
+- Analyze controlled rectifiers and converter control techniques.
+- Implement SPWM and space-vector modulation techniques.
+- Study multilevel inverter topologies.
+- Compare simulation results with theoretical expectations.
+- Automate result analysis and validation where practical.
+- Maintain reproducible and well-documented simulation models.
+
+---
 
 ## Experiments
 
-| No. | Experiment | Folder |
-|---:|---|---|
-| 01 | Device characteristics | `src/exp01_device_characteristics/` |
-| 02 | Fully controlled converter | `src/exp02_fully_controlled_converter/` |
-| 03 | Half controlled converter | `src/exp03_half_controlled_converter/` |
-| 04 | Extinction angle control | `src/exp04_extinction_angle_control/` |
-| 05 | Symmetrical angle control | `src/exp05_symmetrical_angle_control/` |
-| 06 | PWM full converter | `src/exp06_pwm_full_converter/` |
-| 07 | Single-phase SPWM inverter | `src/exp07_spwm_single_phase_inverter/` |
-| 08 | Three-phase SPWM inverter | `src/exp08_spwm_three_phase_inverter/` |
-| 09 | Three-phase space-vector modulation inverter | `src/exp09_svm_three_phase_inverter/` |
-| 10 | Diode-clamped multilevel inverter | `src/exp10_diode_clamped_mli/` |
-| 11 | Flying-capacitor multilevel inverter | `src/exp11_flying_capacitor_mli/` |
-| 12 | Cascaded multilevel inverter | `src/exp12_cascaded_multilevel_inverter/` |
+| No. | Experiment | Status |
+|---:|---|:---:|
+| 01 | IGBT, MTO, ETO, IGCT and MCT characteristics | 🔲 Planned |
+| 02 | Single-phase and three-phase fully controlled converter | 🔲 Planned |
+| 03 | Single-phase and three-phase half-controlled converter | 🔲 Planned |
+| 04 | Single-phase extinction-angle control | 🔲 Planned |
+| 05 | Single-phase symmetrical-angle control | 🔲 Planned |
+| 06 | Single-phase PWM-controlled full converter | 🔲 Planned |
+| 07 | Single-phase SPWM inverter | 🔲 Planned |
+| 08 | Three-phase SPWM inverter | 🔲 Planned |
+| 09 | Three-phase space-vector modulated inverter | 🔲 Planned |
+| 10 | Single-phase diode-clamped multilevel inverter | 🔲 Planned |
+| 11 | Single-phase flying-capacitor multilevel inverter | 🔲 Planned |
+| 12 | Single-phase cascaded multilevel inverter | 🔲 Planned |
 
-## Where things belong
+> Status will be updated as each experiment is implemented, validated, and documented.
 
-| Path | Purpose |
-|---|---|
-| `.github/` | GitHub workflow and contribution templates |
-| `docs/` | Lab manual, theory notes, references, and design notes |
-| `src/` | Experiment-specific parameters, analysis, models, and local results |
-| `scripts/` | MATLAB tools that operate across experiments |
-| `tests/` | Validation scripts for implemented experiments |
-| `results/` | Consolidated outputs and reports |
+---
 
-Each experiment folder follows the same pattern:
+## Technology Stack
 
-- `README.md` — experiment-specific instructions and notes
-- `parameters.m` — experiment parameters
-- `analysis.m` — result analysis
-- `models/` — Simulink model files
-- `results/figures/` and `results/data/` — experiment outputs
+- **MATLAB**
+- **Simulink**
+- **Simscape Electrical**
+- Git
+- GitHub
+- GitHub Actions
 
-These files are currently placeholders. The descriptions above explain their intended roles, not existing functionality.
+---
 
-## Intended workflow
+## Repository Structure
 
-As experiments are implemented, the work for each one should follow this sequence:
+```text
+power-converters-analysis-lab/
+│
+├── .github/        # GitHub workflows and contribution templates
+├── docs/            # Theory, references and engineering methodology
+├── src/             # Experiment-specific models and analysis
+├── scripts/         # Repository-level MATLAB automation
+├── tests/           # Validation and regression tests
+├── results/         # Consolidated results and reports
+│
+├── README.md
+├── LICENSE
+├── CITATION.cff
+└── PowerConvertersAnalysisLab.prj
+```
 
-1. Record the experiment’s parameters.
-2. Build and save its Simulink model in that experiment’s `models/` folder.
-3. Add analysis and document how to reproduce the results.
-4. Save experiment outputs in its `results/` folders.
-5. Add validation once expected behavior and results are defined.
+Each experiment follows a consistent structure:
 
-The shared scripts and tests can then help run and validate completed experiments. They are not operational yet.
+```text
+expXX_experiment_name/
+├── README.md
+├── parameters.m
+├── analysis.m
+├── models/
+└── results/
+    ├── figures/
+    └── data/
+```
 
-## Requirements
+---
 
-MATLAB and Simulink will be needed to develop and run the models. This repository does not specify a MATLAB release. The current `PowerConvertersAnalysisLab.prj` file is an empty placeholder and is not yet a usable MATLAB project.
+## Engineering Workflow
 
+Each experiment follows the workflow:
+
+```text
+Theory
+   ↓
+Parameters
+   ↓
+Simulink / Simscape Model
+   ↓
+Simulation
+   ↓
+Data Extraction
+   ↓
+Numerical Analysis
+   ↓
+Validation
+   ↓
+Results
+   ↓
+Documentation
+```
+
+Changes are developed using feature branches and reviewed before being merged into the main branch.
+
+---
+
+## Results and Analysis
+
+Depending on the experiment, analysis may include:
+
+- Average voltage and current
+- RMS voltage and current
+- Output power
+- Input power
+- Power factor
+- Efficiency
+- Fundamental component
+- Harmonic spectrum
+- Total harmonic distortion (THD)
+- Switching behavior
+- Theoretical versus simulated values
+
+Only metrics relevant to a particular experiment will be included.
+
+---
+
+## Reproducibility
+
+Experiment-specific parameters are maintained separately from the simulation models.
+
+Simulation models are stored in the corresponding experiment's `models/` directory, while analysis scripts process and document the resulting data.
+
+The objective is that an experiment can be reproduced from its:
+
+```text
+README.md
++
+parameters.m
++
+Simulink model
++
+analysis.m
+```
+
+---
+
+## Validation
+
+Validation will be introduced as experiments become operational.
+
+Validation may include:
+
+- Model integrity checks
+- Expected waveform verification
+- Frequency verification
+- RMS and average-value checks
+- Theoretical versus simulated comparisons
+- Numerical tolerance checks
+- Regression testing
+
+---
+
+## Project Status
+
+🚧 **Active Development**
+
+The repository structure has been established. Experiments are being implemented progressively, beginning with Experiment 01.
+
+Simulation models and numerical results will be added as each experiment is developed and validated.
+
+---
+
+## Author
+
+**Abboju Nikhil**
+
+M.Tech — Power Electronics
+
+---
+
+## License
+
+This project is released under the license specified in `LICENSE`.
