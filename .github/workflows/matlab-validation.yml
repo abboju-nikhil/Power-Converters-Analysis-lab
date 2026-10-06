@@ -1,0 +1,70 @@
+name: MATLAB Validation
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  repository-validation:
+    name: Repository Validation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Verify repository structure
+        shell: bash
+        run: |
+          set -e
+
+          required_paths=(
+            "README.md"
+            "LICENSE"
+            "CITATION.cff"
+            "CHANGELOG.md"
+            "PowerConvertersAnalysisLab.prj"
+            "src"
+            "scripts"
+            "tests"
+            "docs"
+          )
+
+          for path in "${required_paths[@]}"; do
+            if [ ! -e "$path" ]; then
+              echo "ERROR: Required path missing: $path"
+              exit 1
+            fi
+          done
+
+          echo "Repository structure validation passed."
+
+      - name: Check MATLAB source files
+        shell: bash
+        run: |
+          set -e
+
+          if find . -name "*.m" -type f | grep -q .; then
+            echo "MATLAB source files found:"
+            find . -name "*.m" -type f
+          else
+            echo "No MATLAB source files found yet."
+            echo "This is expected during repository initialization."
+          fi
+
+      - name: Check Simulink models
+        shell: bash
+        run: |
+          set -e
+
+          if find . -name "*.slx" -type f | grep -q .; then
+            echo "Simulink models found:"
+            find . -name "*.slx" -type f
+          else
+            echo "No Simulink models found yet."
+            echo "Models will be added as experiments are implemented."
+          fi
