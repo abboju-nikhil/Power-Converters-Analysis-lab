@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+title: "Power Converters Analysis Lab"
+message: "If you use this repository in academic work, please cite it."
+type: software
+
+authors:
+  - family-names: "Nikhil"
+    given-names: "Abboju"
+
+repository-code: "https://github.com/abboju-nikhil/Power-Converters-Analysis-lab"
+
+abstract: >
+  A MATLAB/Simulink-based power electronics laboratory covering controlled
+  converters, angle-control techniques, PWM and space-vector modulation,
+  and multilevel inverter topologies, with reproducible simulation,
+  analysis, validation, and documentation.
+
+keywords:
+  - "Power Electronics"
+  - "Power Converters"
+  - "MATLAB"
+  - "Simulink"
+  - "Simscape Electrical"
+  - "Controlled Rectifiers"
+  - "PWM"
+  - "Space Vector Modulation"
+  - "Multilevel Inverters"
+
+license: "MIT"
